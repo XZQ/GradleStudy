@@ -1,4 +1,6 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
+//apply from: 'lifecycle.gradle'
+
 buildscript {
 
     ext.kotlin_version = "1.4.0"
@@ -23,43 +25,7 @@ allprojects {
     }
 }
 
+
 task clean(type: Delete) {
     delete rootProject.buildDir
-//    doLast {
-//        def file = new File('test.kt')
-//        delete file
-//        println "----------->>>>"
-//    }
 }
-//4.buildSrc下的插件
-//此处插件id大小写，中下划线均可*************
-//apply plugin: 'com.xzq-buildSrc'
-//该方式可以不需要resources文件夹，直接引用插件全类名即可
-//apply plugin: com.tb.plugin.TbPlugin
-
-//gradle.addBuildListener(new BuildListener() {
-//    @Override
-//    void buildStarted(Gradle gradle) {
-//        println("buildStarted------------")
-//    }
-//
-//    @Override
-//    void settingsEvaluated(Settings settings) {
-//        println("settingsEvaluated------------")
-//    }
-//
-//    @Override
-//    void projectsLoaded(Gradle gradle) {
-//        println("projectsLoaded------------")
-//    }
-//
-//    @Override
-//    void projectsEvaluated(Gradle gradle) {
-//        println("projectsEvaluated------------")
-//    }
-//
-//    @Override
-//    void buildFinished(BuildResult result) {
-//        println("buildFinished------------")
-//    }
-//})

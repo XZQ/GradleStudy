@@ -7,6 +7,10 @@ class Second implements Plugin<Project> {
 
     @Override
     void apply(Project project) {
-        println('--------------------------------------Second------------------------>>>>>>>')
+        project.task('showCustomPlugin') {
+            doLast {
+                println('hello world plugin!')
+            }
+        }
     }
 }
