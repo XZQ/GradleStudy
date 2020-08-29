@@ -8,5 +8,8 @@ class FirstPlugin implements Plugin<Project> {
     @Override
     void apply(Project project) {
         println "---------------------------FirstPlugin"
+        project
+
     }
+
 }

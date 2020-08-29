@@ -5,6 +5,21 @@ repositories {
     google()
     jcenter()
 }
+sourceSets {
+    main {
+        groovy {
+            srcDir 'src/main/groovy'
+        }
+
+        java {
+            srcDir "src/main/java"
+        }
+
+        resources {
+            srcDir 'src/main/resources'
+        }
+    }
+}
 
 dependencies {
     implementation gradleApi()
