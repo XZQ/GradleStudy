@@ -1,0 +1,32 @@
+/***
+ * 每一个 Groovy 脚本都会被编译器编译成 Script 字节码，而每一个 build.gradle 脚本都会被编译器编译成 Project 字节码，
+ * 所以我们在 build.gradle 中所写的一切逻辑都是在 Project 类内进行书写的。
+ * 下面，我们将按照由易到难的套路来介绍 Project 的一系列重要的 API
+ *
+ * 作者：jsonchao37382
+ * 链接：https://juejin.im/post/6844904132092903437
+ * */
+
+
+//this.getProjects()
+//
+//def getProjects() {
+//    println "<================>"
+//    println " Root Project Start "
+//    println "<================>"
+//    getAllprojects().eachWithIndex { Project project, int index ->
+//        println "child Project is $project  $project.name  $index "
+//    }
+//}
+
+
+this.getSubProjects()
+
+def getSubProjects() {
+    println "<================>"
+    println " Sub Project Start "
+    println "<================>"
+    this.getSubprojects().each { Project project ->
+        println "child Project is $project"
+    }
+}

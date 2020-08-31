@@ -2,8 +2,6 @@ package com.xzq
 
 import org.gradle.api.Plugin
 import org.gradle.api.Project
-import org.gradle.api.tasks.Copy
-import org.gradle.kotlin.dsl.task
 import java.io.File
 import java.nio.file.Files
 import java.nio.file.Paths
@@ -17,7 +15,7 @@ class GitHookPlugin : Plugin<Project> {
     override fun apply(project: Project) {
 
 
-        println('--------------------------------------GitHookPlugin------------------------>>>>>>>')
+        println("--------------------------------------GitHookPlugin------------------------>>>>>>>")
 
 //        val copyGitHookScriptTask = project.task(name = "copyGitHookScript", type = Copy::class) {
 //            inputs.dir("${project.rootDir}/scripts${File.separator}git_commit_msg")
