@@ -48,30 +48,30 @@ gradle.taskGraph.whenReady {
 -------------3.Execution------------------
 
 //每个task执行的 前/后 hook点
-gradle.addListener(new TaskExecutionListener() {
-    @Override
-    void beforeExecute(Task task) {
-        println("beforeExecute-------")
-    }
-
-    @Override
-    void afterExecute(Task task, TaskState state) {
-        println("afterExecute-------")
-    }
-})
-
-//一个task是由1个或1个以上action组成的,action里面才是执行具体的代码,hook如下
-gradle.addListener(new TaskActionListener() {
-    @Override
-    void beforeActions(Task task) {
-
-    }
-
-    @Override
-    void afterActions(Task task) {
-
-    }
-})
+//gradle.addListener(new TaskExecutionListener() {
+//    @Override
+//    void beforeExecute(Task task) {
+//        println("beforeExecute-------")
+//    }
+//
+//    @Override
+//    void afterExecute(Task task, TaskState state) {
+//        println("afterExecute-------")
+//    }
+//})
+//
+////一个task是由1个或1个以上action组成的,action里面才是执行具体的代码,hook如下
+//gradle.addListener(new TaskActionListener() {
+//    @Override
+//    void beforeActions(Task task) {
+//
+//    }
+//
+//    @Override
+//    void afterActions(Task task) {
+//
+//    }
+//})
 
 gradle.buildFinished {
     println("buildFinished--------")
