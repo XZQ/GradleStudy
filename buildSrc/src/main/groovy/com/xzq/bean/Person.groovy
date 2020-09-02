@@ -1,4 +1,4 @@
-package com.xzq
+package com.xzq.bean
 
 public class Person {
 

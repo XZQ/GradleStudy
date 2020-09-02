@@ -1,4 +1,4 @@
-package com.xzq
+package com.xzq.plugin
 
 import org.gradle.api.Plugin
 import org.gradle.api.Project
@@ -14,7 +14,7 @@ class PersonPlugin implements Plugin<Project> {
     @Override
     void apply(Project project) {
 
-        project.extensions.add("person", Person)
+        project.extensions.add("person", com.xzq.bean.Person)
 
         project.task('printPerson') {
             group 'XZQ'

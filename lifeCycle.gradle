@@ -1,10 +1,14 @@
 // Gradle  生命周期
+//https://juejin.im/post/6844903841230487560
 
--------1.Initialization 阶段-------------- -
-        gradle.settingsEvaluated {
-            //settingsEvaluated 可以获取到配置完毕的Settings对象
-            println("settingsEvaluated-----")
-        }
+
+
+//-------1.Initialization 阶段-------------- -
+
+gradle.settingsEvaluated {
+    //settingsEvaluated 可以获取到配置完毕的Settings对象
+    println("settingsEvaluated-----")
+}
 
 gradle.projectsLoaded {
     //projectsLoaded回调时已经根据setting script创建了各个模块
@@ -44,6 +48,13 @@ gradle.projectsEvaluated {
 gradle.taskGraph.whenReady {
     println("taskGraph whenReady")
 }
+gradle.taskGraph.beforeTask {
+    println("每个 task 执行前会调这个接口")
+}
+gradle.taskGraph.afterTask {
+    println("每个 task 执行完成会调这个接口")
+}
+
 
 -------------3.Execution------------------
 

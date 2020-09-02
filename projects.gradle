@@ -20,13 +20,45 @@
 //}
 
 
-this.getSubProjects()
+//this.getSubProjects()
+//
+//def getSubProjects() {
+//    println "<================>"
+//    println " Sub Project Start "
+//    println "<================>"
+//    this.getSubprojects().each { Project project ->
+//        println "child Project is $project"
+//    }
+//}
 
-def getSubProjects() {
-    println "<================>"
-    println " Sub Project Start "
-    println "<================>"
-    this.getSubprojects().each { Project project ->
-        println "child Project is $project"
+
+task task0 {
+    println " task0"
+}
+
+
+task task1 {
+    println " task1"
+//    doFirst {
+//        println('task1 doFirst')
+//    }
+//    doLast {
+//        println('task1 doLast')
+//    }
+}
+
+task test(dependsOn: [task0, task1]) {
+    doLast {
+        println " test"
     }
 }
+
+project.task("task2") {
+    println " task2"
+}
+
+project.tasks.create("task3") {
+    println " task3"
+}
+
+
