@@ -6,7 +6,7 @@ plugins {
 }
 
 
-apply plugin: PersonPlugin
+//apply plugin: PersonPlugin
 //apply plugin: 'second.plugin'
 
 
@@ -15,10 +15,10 @@ apply plugin: PersonPlugin
 //apply plugin: 'com.xzq-buildSrc's
 //该方式可以不需要resources文件夹，直接引用插件全类名即可
 //apply plugin: com.tb.plugin.TbPlugin
-person {
-    name 'atom'
-    age 18
-}
+//person {
+//    name 'atom'
+//    age 18
+//}
 android {
     compileSdkVersion 29
     buildToolsVersion "30.0.2"

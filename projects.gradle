@@ -1,3 +1,5 @@
+import com.xzq.task.SayTask
+
 /***
  * 每一个 Groovy 脚本都会被编译器编译成 Script 字节码，而每一个 build.gradle 脚本都会被编译器编译成 Project 字节码，
  * 所以我们在 build.gradle 中所写的一切逻辑都是在 Project 类内进行书写的。
@@ -32,33 +34,38 @@
 //}
 
 
-task task0 {
-    println " task0"
-}
+//task task0 {
+//    println " task0"
+//}
 
 
-task task1 {
-    println " task1"
-//    doFirst {
-//        println('task1 doFirst')
-//    }
+//task task1 {
+//    println " task1"
+////    doFirst {
+////        println('task1 doFirst')
+////    }
+////    doLast {
+////        println('task1 doLast')
+////    }
+//}
+
+//task test(dependsOn: [task0, task1]) {
 //    doLast {
-//        println('task1 doLast')
+//        println " test"
 //    }
+//}
+//
+//project.task("task2") {
+//    println " task2"
+//}
+//
+//project.tasks.create("task3") {
+//    println " task3"
+//}
+
+// 自定义task的
+task hello(type: SayTask, constructorArgs: [30])
+
+task hello1(type: SayTask, constructorArgs: [18]) {
+    msg = "XZQ"
 }
-
-task test(dependsOn: [task0, task1]) {
-    doLast {
-        println " test"
-    }
-}
-
-project.task("task2") {
-    println " task2"
-}
-
-project.tasks.create("task3") {
-    println " task3"
-}
-
-
