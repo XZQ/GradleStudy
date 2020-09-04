@@ -25,7 +25,7 @@ gradlePlugin {
         //此处名字可以随意，下面指定插件id和具体类名
         javaPlugin {
             id = 'com.xzq.tb-plugin'
-            implementationClass = 'com.tb.plugin.TbJavaPlugin'
+            implementationClass = 'com.xzq.plugin.TbJavaPlugin'
         }
     }
 }

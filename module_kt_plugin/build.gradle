@@ -1,14 +1,3 @@
-//plugins {
-//    id 'kotlin-android'
-//    id 'maven-publish'
-//}
-//
-//apply plugin: 'kotlin'
-//dependencies {
-//    implementation gradleApi()
-//    implementation localGroovy()
-//    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-//}
 plugins {
     id 'kotlin'
     id 'maven-publish'

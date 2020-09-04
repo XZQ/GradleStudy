@@ -6,8 +6,6 @@ plugins {
 //    id 'maven-publish'
 }
 
-
-apply plugin: 'maven'
 apply plugin: PersonPlugin
 //apply plugin: 'second.plugin'
 
@@ -67,37 +65,6 @@ android {
 //        }
 //    }
 }
-// 发布到本地
-repositories {
-    mavenCentral()
-}
-
-version = '1.0.0'
-
-//uploadArchives {
-//    repositories {
-//        maven {
-////            repository(url: uri("$rootDir/repo"))
-//            url = uri("$rootDir/repo")
-//            //本地的Maven地址设置为D:/repos
-////            repository(url: uri("D:/Bigo/workspace/GradleStudy/repo"))
-//        }
-//    }
-//}
-
-group = 'com.xzq.plugin'
-version = '1.0.0'
-archivesBaseName = 'module-plugin'
-
-uploadArchives {
-    repositories {
-        maven {
-//            repository(url: uri('../repo'))
-            url = uri("$rootDir/repo")
-        }
-    }
-}
-
 
 dependencies {
 
