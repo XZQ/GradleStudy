@@ -3,10 +3,12 @@ import com.xzq.plugin.PersonPlugin
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
+//    id 'maven-publish'
 }
 
 
-//apply plugin: PersonPlugin
+apply plugin: 'maven'
+apply plugin: PersonPlugin
 //apply plugin: 'second.plugin'
 
 
@@ -15,10 +17,12 @@ plugins {
 //apply plugin: 'com.xzq-buildSrc's
 //该方式可以不需要resources文件夹，直接引用插件全类名即可
 //apply plugin: com.tb.plugin.TbPlugin
-//person {
-//    name 'atom'
-//    age 18
-//}
+person {
+    name 'atom'
+    age 18
+}
+
+
 android {
     compileSdkVersion 29
     buildToolsVersion "30.0.2"
@@ -63,6 +67,37 @@ android {
 //        }
 //    }
 }
+// 发布到本地
+repositories {
+    mavenCentral()
+}
+
+version = '1.0.0'
+
+//uploadArchives {
+//    repositories {
+//        maven {
+////            repository(url: uri("$rootDir/repo"))
+//            url = uri("$rootDir/repo")
+//            //本地的Maven地址设置为D:/repos
+////            repository(url: uri("D:/Bigo/workspace/GradleStudy/repo"))
+//        }
+//    }
+//}
+
+group = 'com.xzq.plugin'
+version = '1.0.0'
+archivesBaseName = 'module-plugin'
+
+uploadArchives {
+    repositories {
+        maven {
+//            repository(url: uri('../repo'))
+            url = uri("$rootDir/repo")
+        }
+    }
+}
+
 
 dependencies {
 
